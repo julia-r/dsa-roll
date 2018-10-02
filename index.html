@@ -14,14 +14,14 @@
     <h1>DSA Würfel Tool</h1>
 
     <h2>Attribute</h2>
-    <ul>
+    <ul id="attributes">
         <li v-for="attribute in myAttributes">
           {{ attribute.name }}: {{ attribute.value }}
         </li>
     </ul>
 
     <h2>Fertigkeiten</h2>  
-    <ul>
+    <ul id="skills">
         <li v-for="(skill, skillID) in skills">
             <button v-on:click="rollSkill(skillID)">
                 {{ skill.name }} ({{ skill.attributes[0] }}/{{ skill.attributes[1] }}/{{ skill.attributes[2] }}) - {{ skill.value }} 
