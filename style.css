@@ -1,0 +1,35 @@
+body {
+    font-family: Verdana, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    background: #fff;
+}
+
+h1, h2, h3 {
+    margin: 0.4em 0;
+}
+
+#app, footer {
+    padding: 0 10px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#app {
+    min-height: 95vh;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
+
+
+.green {
+    color: green;
+}
+.red {
+    color: red;
+}
+
+footer {
+    clear: left;
+    margin: 10px auto;
+}

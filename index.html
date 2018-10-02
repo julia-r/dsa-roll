@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DSA Würfel Tool</title>
+    <script src="vue.js"></script>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="style.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimum-scale=0.5">
+</head>
+
+<body>
+<div id="app">
+    <h1>DSA Würfel Tool</h1>
+
+    <input type="button" value="Schleichen" v-on:click="rollSkill('sneek')">
+    <h2>Results</h2>
+    <div v-html="logs"></div>
+    <div></div>
+</div>
+<footer>
+    <a href="https://github.com/julia-r/dsa-roll">Auf Github</a>
+</footer>
+<script src="script.js"></script>
+</body>
+
+</html>
