@@ -13,10 +13,22 @@
 <div id="app">
     <h1>DSA Würfel Tool</h1>
 
-    <input type="button" value="Schleichen" v-on:click="rollSkill('sneek')">
-    <h2>Results</h2>
+    <h2>Attribute</h2>
+    <ul>
+        <li v-for="attribute in myAttributes">
+          {{ attribute.name }}: {{ attribute.value }}
+        </li>
+    </ul>
+
+    <h2>Fertigkeiten</h2>  
+    <ul>
+        <li v-for="(skill, skillID) in skills">
+            <button v-on:click="rollSkill(skillID)">{{ skill.name }} - {{ skill.value }} </button>
+        </li>
+    </ul>
+
+    <h2>Ergebnis:</h2>
     <div v-html="logs"></div>
-    <div></div>
 </div>
 <footer>
     <a href="https://github.com/julia-r/dsa-roll">Auf Github</a>
