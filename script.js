@@ -20,15 +20,15 @@ var vm = new Vue({
                 value: 11,
             },
             ff: {
-                name: "fingerfertigkeit",
+                name: "Fingerfertigkeit",
                 value: 13
             },
             ge: {
-                name: "Gewandheit",
+                name: "Gewandtheit",
                 value: 14
             },
             ko: {
-                name: "Kondition",
+                name: "Konstitution",
                 value: 13
             },
             kk: {
