@@ -23,7 +23,9 @@
     <h2>Fertigkeiten</h2>  
     <ul>
         <li v-for="(skill, skillID) in skills">
-            <button v-on:click="rollSkill(skillID)">{{ skill.name }} - {{ skill.value }} </button>
+            <button v-on:click="rollSkill(skillID)">
+                {{ skill.name }} ({{ skill.attributes[0] }}/{{ skill.attributes[1] }}/{{ skill.attributes[2] }}) - {{ skill.value }} 
+            </button>
         </li>
     </ul>
 
