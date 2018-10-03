@@ -277,7 +277,8 @@ var vm = new Vue({
                 value: 7
             }
         },
-        logs: ""
+        logs: "",
+        editMode: "false"
     },
     computed: {},
     watch: {},
@@ -314,6 +315,15 @@ var vm = new Vue({
 
         rollD20: function(){
             return Math.floor(Math.random()*(20)+1);
+        },
+
+        toogleEdit: function(){
+            if(this.editMode === true){
+                this.editMode = false;
+            }
+            else {
+                this.editMode = true;
+            }
         }
     },
     config: {

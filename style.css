@@ -28,10 +28,17 @@ h1, h2, h3 {
     text-align: center;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    font-family: "Consolas", monospace;
 }
 
 #attributes li {
     margin: 0 10px;
+}
+
+#attributes input,
+#skills input {
+    width: 40px;
 }
 
 #attributes li .attr {

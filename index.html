@@ -13,21 +13,47 @@
 <div id="app">
     <h1>DSA Würfel Tool</h1>
 
-    <h2>Attribute</h2>
-    <ul id="attributes">
-        <li v-for="attribute, attributeID in myAttributes">
-          <span class="attr">{{ attributeID }}</span>: {{ attribute.value }}
-        </li>
-    </ul>
+    Werte editieren? <button v-on:click="toogleEdit()">Edit</button> ACHTUNG: Werte werden aktuell nicht gespeichert!
 
-    <h2>Fertigkeiten</h2>  
-    <ul id="skills">
-        <li v-for="(skill, skillID) in skills">
-            <button v-on:click="rollSkill(skillID)">
-                {{ skill.name }} (<span class="attr">{{ skill.attributes[0] }}/{{ skill.attributes[1] }}/{{ skill.attributes[2] }}</span>) - {{ skill.value }} 
-            </button>
-        </li>
-    </ul>
+    <h2>Attribute </h2>
+
+    <template v-if="editMode==true">
+        <ul id="attributes" v-show="editMode">
+            <li v-for="attribute, attributeID in myAttributes">
+            <span class="attr">{{ attributeID }}</span>: <input v-model="attribute.value" type="number" size="2" min="1" max="20">
+            </li>
+        </ul>
+    </template>
+
+    <template v-else>
+        <ul id="attributes">
+            <li v-for="attribute, attributeID in myAttributes">
+            <span class="attr">{{ attributeID }}</span>: {{ attribute.value }}
+            </li>
+        </ul>
+    </template>
+
+    <h2>Fertigkeiten</h2>
+    
+    <template v-if="editMode==true">
+        <ul id="skills">
+            <li v-for="(skill, skillID) in skills">
+                <button v-on:click="rollSkill(skillID)">
+                    {{ skill.name }} - <input v-model="skill.value" min="0" max="24" type="number"> 
+                </button>
+            </li>
+        </ul>
+    </template>
+
+    <template v-else>
+        <ul id="skills">
+            <li v-for="(skill, skillID) in skills">
+                <button v-on:click="rollSkill(skillID)">
+                    {{ skill.name }} (<span class="attr">{{ skill.attributes[0] }}/{{ skill.attributes[1] }}/{{ skill.attributes[2] }}</span>) - {{ skill.value }} 
+                </button>
+            </li>
+        </ul>
+    </template>
 
   <!--  <h2>Ergebnis:</h2>-->
     <div v-html="logs"></div>
